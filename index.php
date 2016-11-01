@@ -1,3 +1,8 @@
+<?php
+
+$body = file_get_contents((isset($_GET['q']) ? $_GET['q'] : 'homepage') . '.html');
+
+$html = '
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh" xml:lang="zh">
@@ -25,7 +30,7 @@
 	<style type="text/css">
 
 .mainmenu_community { 
-background-image: url('https://www.kde.org/media/images/plasmaMenu/green.icon.png'); 
+background-image: url(\'https://www.kde.org/media/images/plasmaMenu/green.icon.png\'); 
 background-repeat: no-repeat; 
 background-position: 0 0; 
 position: relative; 
@@ -48,7 +53,7 @@ opacity: 0;
 }
 
 .mainmenu_workspaces { 
-background-image: url('https://www.kde.org/media/images/plasmaMenu/orange.icon.png'); 
+background-image: url(\'https://www.kde.org/media/images/plasmaMenu/orange.icon.png\'); 
 background-repeat: no-repeat; 
 background-position: 0 0; 
 position: relative; 
@@ -71,7 +76,7 @@ opacity: 0;
 }
 
 .mainmenu_applications { 
-background-image: url('https://www.kde.org/media/images/plasmaMenu/red.icon.png'); 
+background-image: url(\'https://www.kde.org/media/images/plasmaMenu/red.icon.png\'); 
 background-repeat: no-repeat; 
 background-position: 0 0; 
 position: relative; 
@@ -94,7 +99,7 @@ opacity: 0;
 }
 
 .mainmenu_developer_platform { 
-background-image: url('https://www.kde.org/media/images/plasmaMenu/gray.icon.png'); 
+background-image: url(\'https://www.kde.org/media/images/plasmaMenu/gray.icon.png\'); 
 background-repeat: no-repeat; 
 background-position: 0 0; 
 position: relative; 
@@ -117,11 +122,11 @@ opacity: 0;
 }
 
 .mainmenu_support { 
-background-image: url('https://www.kde.org/media/images/plasmaMenu/purple.icon.png'); 
-background-repeat: no-repeat; 
-background-position: 0 0; 
-position: relative; 
-z-index: 95; 
+background-image: url(\'https://www.kde.org/media/images/plasmaMenu/purple.icon.png\');
+background-repeat: no-repeat;
+background-position: 0 0;
+position: relative;
+z-index: 95;
 }
 
 .mainmenu_support:hover { 
@@ -157,7 +162,7 @@ opacity: 0;
     <div class="root">
     	<div class="header">
     		<div class="toolbox">
-    		 <div id="location"><img src="https://www.kde.org/media/images/kde.png" id="site_logo" alt="Logo" /><div class="toolboxtext"><a href="index.html">KDE 中国</a></div></div>
+    		 <div id="location"><img src="https://www.kde.org/media/images/kde.png" id="site_logo" alt="Logo" /><div class="toolboxtext"><a href="./">KDE 中国</a></div></div>
 			</div>
 			<div class="plasmamenu_box">
 <div id="mainmenu_community" class="mainmenu_community">
@@ -167,11 +172,11 @@ opacity: 0;
 <div class="menubox_body">
 <div class="mainmenu_community_animation"></div>
 <div class="mainmenu_community_content">
-<ul class="menubox_title"><li class="index"><a href="https://www.kde.org/community/">社区</a></li></ul>
+<ul class="menubox_title"><li class="index"><a href="./?q=community/index">社区</a></li></ul>
 <img class="menubox_sep" src="https://www.kde.org/media/images/plasmaMenu/menubox_hr.png" alt="" />
 <ul>
 <li class="index mainmenu_community_about_kde menubox_subhover">
-<h3><a href="/community/whatiskde/">关于 KDE</a></h3>
+<h3><a href="./?q=community/whatiskde/index">关于 KDE</a></h3>
 <img class="menubox_subarr" src="https://www.kde.org/media/images/plasmaMenu/menubox_arrow.png" alt="" /><div class="mainmenu_community_about_kde_sub menubox_subparent">
 <div class="menubox_top"></div>
 <div class="menubox_body">
@@ -295,170 +300,8 @@ opacity: 0;
 <a href="https://www.kde.org/support/mailinglists/">邮件列表</a>
 </li><li class="index">
 <a href="https://www.kde.org/info/security/">安全公告</a>
-</li></ul></div></div><div class="menubox_bottom"></div></div></div></div>		</div>
-	<div class="content">
-	<script type="text/javascript" src="https://www.kde.org/media/javascripts/jquery-1.4.2.min.js"></script>
-   <script type="text/javascript" src="https://www.kde.org/media/javascripts/jquery.mailme.js"></script>
-	<script type="text/javascript" src="https://www.kde.org/media/javascripts/plasmaMenu.min.js"></script>	
-	<script type="text/javascript" src="https://www.kde.org/media/javascripts/jquery.cycle.all.min.js"></script>
-	<script type="text/javascript">
-		(function($) {
-			var cache = [];
-			// Arguments are image paths relative to the current page.
-			$.preLoadImages = function() {
-			    var args_len = arguments.length;
-			    for (var i = args_len; i--;) {
-				var cacheImage = document.createElement('img');
-				cacheImage.src = arguments[i];
-				cache.push(cacheImage);
-			    }
-			 }
-		})(jQuery)
-		
-		$(document).ready(function() {
-			$('span.mailme').mailme();
-			$('.sub').hide();
-			$('.toggle').show();
-			$('.teaser_hide').css('display', 'block');
-						// You need to add a comma after the php function output if there are more entries
-			jQuery.preLoadImages("/images/teaser/randa2016.png","/images/teaser/jointhegame.png","/images/teaser/plasma5.png","/images/teaser/KDEDevelbook.png",
-								 "/media/images/plasmaMenu/menubox_top.png", 
-								 "/media/images/plasmaMenu/menubox_body.png",
-								 "/media/images/plasmaMenu/menubox_bottom.png");
-			$('.teaser').cycle({
-				fx: 'fade',
-				timeout: 6000,
-				speed: 500,
-				next : $('#next'),
-				prev : $('#previous')
-			});
-
-			var show = function(e) {
-				var teaserPosition = $('.teaser').offset();
-				var next = $('#next');
-				var prev = $('#previous');
-				var left = (teaserPosition.left + $('.teaser').width()) / 2;
-				next.css({top:teaserPosition.top, left:left}).show();
-				prev.css({top:teaserPosition.top+$('.teaser').height()-prev.height(), left:left}).show();
-			};
-
-			var hide = function(time) {
-				$('#next').hide();
-				$('#previous').hide();
-			};
-
-			var pause = function() {
-				$('.teaser').cycle('pause');
-			}
-
-			var resume = function() {
-				$('.teaser').cycle('resume');
-			}
-
-			$('.teaser').mouseover(show);
-			$('.teaser').mouseout(hide);
-			$('.teaser').mouseover(pause);
-			$('.teaser').mouseout(resume);
-
-			$('#next').mouseover(show);
-			$('#previous').mouseover(show);
-			
-					});
-	</script>
-<span class="teaser">
-	<a href="https://www.kde.org/fundraisers/randameetings2016/"><img src="https://www.kde.org/images/teaser/randa2016.png" alt="Randa Meetings 2016 Fundraising Campaign" /></a>
-	<a href="https://relate.kde.org/civicrm/contribute/transact?reset=1&amp;id=5"><img class="teaser_hide" src="https://www.kde.org/images/teaser/jointhegame.png" alt="Join the Game" /></a>
-	<a href="https://www.kde.org/announcements/plasma-5.7.0.php"><img class="teaser_hide" src="https://www.kde.org/images/teaser/plasma5.png" alt="Plasma 5.7 Released" /></a>
-	<a href="http://books.kde.org/"><img class="teaser_hide" src="https://www.kde.org/images/teaser/KDEDevelbook.png" alt="KDE Books" /></a>
-</span>
-    <div id="main">
-                       <div style="float: right; padding: 7px 10px; margin-left: 10px; border: 1px solid #CCC; border-radius: 12px;" >
-
-                           <div style='font-size: 14px; color: #909090; float: left; padding-top: 5px;'><a href='https://www.kde.org/community/donations/index.php#money'>（为什么？）</a> 捐赠</div>
-                    <img src='https://www.kde.org/media/images/paypal.png' style='padding: 0px; border: none; margin: 0px; margin-left: 10px; float: right;' alt="paypal" />
-                    <form style='clear: both; margin: 0px; box-shadow: none; padding: 0px; padding-top: 10px; border: none;' action="https://www.paypal.com/en_US/cgi-bin/webscr" method="post" onsubmit="return amount.value >= 2 || window.confirm('Your donation is smaller than 2€. This means that most of your donation\nwill end up in processing fees. Do you want to continue?');">
-                        <input type="hidden" name="cmd" value="_donations" />
-                        <input type="hidden" name="lc" value="GB" />
-                        <input type="hidden" name="item_name" value="Development and communication of KDE software" />
-                        <input type="hidden" name="custom" value="//www.kde.org//donation_box" />
-                        <input type="hidden" name="currency_code" value="EUR" />
-                        <input type="hidden" name="cbt" value="Return to www.kde.org" />
-                        <input type="hidden" name="return" value="https://www.kde.org/community/donations/thanks_paypal.php" />
-                        <input type="hidden" name="notify_url" value="https://www.kde.org/community/donations/notify.php" />
-                        <input type="hidden" name="business" value="kde-ev-paypal@kde.org" />
-                        <input type='text' name="amount" value="10.00" style='text-align: right; padding-right: 1em; border: 1px solid #CCC; width: 60px; height: 23px; ' /> €
-                        <button style='cursor: pointer; background-color: #0070BB; border: 1px solid #0060AB; color: #FFF; height: 27px;' type='submit'>捐赠</button>
-                    </form>
-                </div>
-        
-<a name="cp-content"></a>
-<h2>自由体验！</h2>
-<div style='clear:both;'></div>
-    <div id="module">
-    </div>
-    <div class="info-area">
-
-    <p><a href="https://www.kde.org/download" class="downloadButton" >获取 KDE 软件</a></p>
-
-    <p><strong>邮件列表</strong></p>
-    <ul>
-      <li><a href="https://mail.kde.org/mailman/listinfo/kde-china">kde-china</a></li>
-    </ul>
-
-    <p><strong>论坛</strong></p>
-    <ul>
-      <li><a href="https://forum.kde.org/viewforum.php?f=149">KDE 中文</a></li>
-    </ul>
-
-    <p><strong>IRC频道</strong></p>
-    <ul>
-      <li>#kde-cn</li>
-      <li>#archlinux-cn</li>
-    </ul>
-
-    <p><strong>社交媒体</strong></p>
-    <a href="https://twitter.com/kdecommunity"><img style='margin: 0; border: 0; background: 0' src="https://www.kde.org/images/twitter.png" alt="Twitter" /></a>
-    <a href="https://www.facebook.com/kde"><img style='margin: 0; border: 0; background: 0'  src="https://www.kde.org/images/facebook.png" alt="Facebook" /></a>
-    <a href="https://plus.google.com/105126786256705328374/posts"><img style='margin: 0; border: 0; background: 0'  src="https://www.kde.org/images/gplus.png" alt="Google+" /></a>
-
-    </div>
-
-    <p>KDE&reg; 社区是一个国际性技术团队，致力于创造自由的、用户友好体验，提供先进的图形桌面、各式各样的应用：通讯、工作、教育、娱乐，易于构建应用的平台。我们强烈关注解决新旧问题的创新性解决方案，创造开放的充满活力的实验氛围。<br />
-    <a href="/community/whatiskde">了解更多...</a>
-    </p>
-
-<h2><a name="announcements">最新公告</a></h2>
-
-<p><b>kde-china l10n 简体中文翻译需要您！</b><br/>
-请<a href="https://community.kde.org/KDE_Localization/zh-cn/Progress">认领</a>翻译任务，<a href="https://community.kde.org/KDE_Localization/zh-cn/Translate">了解</a>翻译流程。
-</p>
-
-<p><b><a href="https://community.kde.org/Promo/Events/Parties/KDE_20_Anniversary#Beijing">KDE 二十周年庆</a></b><br/>
-2016年10月15日，<a href="https://dot.kde.org/2016/10/20/leslie-zhai-talks-20-years-kde-china">我们在北京庆祝 KDE 二十岁生日</a>！
-</p>
-
-<p><b><a href="https://www.kde.org/announcements/kde-frameworks-5.26.0.php">KDE 发布 KF5 v5.26.0</a></b><br/>
-2016年9月10日，KDE 发布我们的 Qt 库模块 KF5（发布周期：每月）。
-</p>
-
-<p><b><a href="https://www.kde.org/announcements/announce-applications-16.08.1.php">KDE 发布应用 v16.08.1</a></b><br/>
-2016年9月8日，KDE 发布 KDE 应用 v16.08.1。
-</p>
-
-<p><b><a href="https://www.kde.org/announcements/plasma-5.7.95.php">Plasma 5.7.95 发布</a></b><br/>
-2016年9月15日星期三，Plasma 5.7.95 发布。
-</p>
-
-<p><b><a href="http://www.leetcode.cn/2016/08/k3b.html">K3b 迁移到KF5</a></b><br/>
-2016年7月，K3b迁移到KF5。
-</p>
-
-查看 <a href="https://www.kde.org/announcements/" title="View older announcements">更多公告...</a>
-</p>
-
-		</div>
-	</div>
- 	<div style="clear: both;"></div>
+</li></ul></div></div><div class="menubox_bottom"></div></div></div></div>		</div>' . $body . '
+	
 	<div class="footer">
 	</div><div style="clear: both;"></div>
 </div>
@@ -490,10 +333,10 @@ WARNING END
 <!-- Piwik -->
 <script type="text/javascript">
   var pkBaseURL = "https://stats.kde.org/";
-  document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  document.write(unescape("%3Cscript src=\'" + pkBaseURL + "piwik.js\' type=\'text/javascript\'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-  piwik_action_name = 'Experience Freedom!';
+  piwik_action_name = \'Experience Freedom!\';
   piwik_idsite = 1;
   piwik_url = pkBaseURL + "piwik.php";
   piwik_log(piwik_action_name, piwik_idsite, piwik_url);
@@ -504,4 +347,8 @@ WARNING END
 
 
 </body>
-</html>
+</html>';
+
+echo $html;
+
+?>
