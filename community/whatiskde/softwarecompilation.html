@@ -1,0 +1,168 @@
+	<div class="content">
+	<script type="text/javascript" src="/media/javascripts/jquery-1.4.2.min.js"></script>
+   <script type="text/javascript" src="/media/javascripts/jquery.mailme.js"></script>
+	<script type="text/javascript" src="/media/javascripts/plasmaMenu.min.js"></script>	
+	<script type="text/javascript" src="/media/javascripts/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript">
+		(function($) {
+			var cache = [];
+			// Arguments are image paths relative to the current page.
+			$.preLoadImages = function() {
+			    var args_len = arguments.length;
+			    for (var i = args_len; i--;) {
+				var cacheImage = document.createElement('img');
+				cacheImage.src = arguments[i];
+				cache.push(cacheImage);
+			    }
+			 }
+		})(jQuery)
+		
+		$(document).ready(function() {
+			$('span.mailme').mailme();
+			$('.sub').hide();
+			$('.toggle').show();
+			$('.teaser_hide').css('display', 'block');
+					});
+	</script>    <div id="main">
+                       <div style="float: right; padding: 7px 10px; margin-left: 10px; border: 1px solid #CCC; border-radius: 12px;" >
+
+                    <div style='font-size: 14px; color: #909090; float: left; padding-top: 5px;'><a href='//www.kde.org/community/donations/index.php#money'>(为什么？) 捐赠</a></div>
+                    <img src='https://www.kde.org/media/images/paypal.png' style='padding: 0px; border: none; margin: 0px; margin-left: 10px; float: right;' alt="paypal" />
+                    <form style='clear: both; margin: 0px; box-shadow: none; padding: 0px; padding-top: 10px; border: none;' action="https://www.paypal.com/en_US/cgi-bin/webscr" method="post" onsubmit="return amount.value >= 2 || window.confirm('Your donation is smaller than 2€. This means that most of your donation\nwill end up in processing fees. Do you want to continue?');">
+                        <input type="hidden" name="cmd" value="_donations" />
+                        <input type="hidden" name="lc" value="GB" />
+                        <input type="hidden" name="item_name" value="Development and communication of KDE software" />
+                        <input type="hidden" name="custom" value="//www.kde.org/community/whatiskde/softwarecompilation.php/donation_box" />
+                        <input type="hidden" name="currency_code" value="EUR" />
+                        <input type="hidden" name="cbt" value="Return to www.kde.org" />
+                        <input type="hidden" name="return" value="https://www.kde.org/community/donations/thanks_paypal.php" />
+                        <input type="hidden" name="notify_url" value="https://www.kde.org/community/donations/notify.php" />
+                        <input type="hidden" name="business" value="kde-ev-paypal@kde.org" />
+                        <input type='text' name="amount" value="10.00" style='text-align: right; padding-right: 1em; border: 1px solid #CCC; width: 60px; height: 23px; ' /> €
+                        <button style='cursor: pointer; background-color: #0070BB; border: 1px solid #0060AB; color: #FFF; height: 27px;' type='submit'>捐赠</button>
+                    </form>
+                </div>
+        
+<a name="cp-content"></a>
+<h2>KDE 软件集</h2>
+<div style='clear:both;'></div>
+    <div id="module">
+    </div>
+
+<h2>何为 KDE 软件集？</h2>
+
+<p>
+KDE 软件集源于 KDE 项目历史。一开始，KDE 是为 Linux 和类似的操作系统创建一个美观、功能强大和自由的桌面计算环境。当时，这些系统缺少一个可以与专有操作系统供应商竞争的图形化用户环境。KDE 填补了这一空白。
+</p><p>
+最初，KDE 软件由一系列基本工具组成，一起发布，并标记为 K 桌面环境。由于它是作为一个同时发布的应用程序和库的集合捆绑在一起，所以将整个集合作为单一品牌的软件集。
+</p><p>
+然而，随着 KDE 团队的成长，创建了更多的应用程序，许多应用程序已经转向使用自己的发布周期和模式。虽然这些应用程序仍然由 KDE 团队开发，但它们不属于主要桌面软件集。此外，大多数 KDE 应用程序现在独立于工作区或操作系统，这就要求：它们现在被视为独立个体，而不再属于同时开发并发布的程序大集合。
+</p><p>
+KDE 软件集由：库、工作区和应用程序组成，它们共享该共同体，并继续使用相同的发布周期。软件可以移入并移出这个非正式的集合，这取决于该软件的贡献者，但在软件集的主要版本中要确保库级别的二进制兼容性。
+</p>
+
+<h3>软件集的好处</h3>
+
+<p>
+对于用户，统一的软件集带来了许多直接的好处：
+</p>
+
+<ul>
+<li>A consistent look and feel between applications</li>
+
+<li>Internationalization: the Software Compilation promotes translation, and is 
+available in dozens of languages</li>
+
+<li>A host of useful KDE applications that are designed with integration in mind</li>
+
+<li>A synchronized software update cycle, which makes updating or installing KDE
+software easier to schedule</li>
+</ul>
+
+<h2>The current Software Compilation</h2>
+<p>The current <strong>official</strong> Software Compilation consists
+of the following packages, many of which contain multiple applications and/or libraries:</p>
+
+<ul>
+<li>KDE-Libs: The software libraries that compose the KDE <a href="https://www.kde.org/developerplatform/">Developer Platform</a>,
+required by all KDE applications.</li>
+
+<li>KDE-Base: <ul>
+<li>Runtime: Additional software components required by many KDE Applications to perform
+properly.
+<li>Applications: Applications that are central to a basic desktop experience,
+such as a file manager or web browser.</li>
+<li>Workspace: The KDE <a href="https://www.kde.org/workspaces/">Workspaces</a> that provide the tools and user environments
+for a Desktop, Netbook or Mobile experience</li>
+</ul></li>
+
+<li>KDE-Plasma-Addons: Additional themes and applets for the desktop and panel.</li>
+
+<li>KDE-Network: Networking applications such as an instant messenger and download manager.</li>
+
+<li><a href="http://kontact.kde.org/">KDE-Pim</a>: Mail client, addressbook, organizer and groupware integration.</li>
+
+<li>KDE-Graphics: Document viewer, image viewer and selected other graphics applications.</li>
+
+<li><a href="http://multimedia.kde.org/">KDE-Multimedia</a>: Includes a video player as well as different audio players.</li>
+
+<li><a href="http://phonon.kde.org">Phonon</a>: Multimedia layer that
+supports different backends, on different operating systems, for multimedia output.</li>
+
+<li><a href="http://accessibility.kde.org/">KDE-Accessibility</a>:
+Applications to improve computer access for disabled people such as a text-to-speech system.</li>
+
+<li><a href="http://utils.kde.org">KDE-Utilities</a>:
+Useful utilities like an archiving tool and a calculator.</li>
+
+<li><a href="http://edu.kde.org/">KDE-Edu</a>: Education and science applications.</li>
+
+<li><a href="http://games.kde.org/">KDE-Games</a>: Classic and modern games.</li>
+
+<li>KDE-Toys: KDE's fun stuff.</li>
+
+<li><a href="http://kde-artists.org">KDE-Artwork</a>: Additional icons, styles, wallpapers, screensavers and window decorations.</li>
+
+<li>KDE-Admin: Various tools to aid with system administration.</li>
+
+<li>KDE-SDK: Script and tools which simplify development of KDE applications.</li>
+
+<li>KDE-Bindings: bindings for various programming languages (Python, Ruby, Perl, Java...).</li>
+
+</ul>
+
+
+<p><a href="/download/" class="downloadButton" >Get KDE Software</a></p>
+
+<h2>Other KDE Software</h2>
+<p>Several other packages which are <strong>not part of the official release</strong>
+are also available. Software in these packages are not usually linked to the release 
+cycle and requirements of the main Software Compilation.</p>
+<ul>
+<li><a href="http://calligra-suite.org/">Calligra</a>: An extensive productivity and creative suite for desktop and mobile platforms.</li>
+
+<li><a href="http://www.kdewebdev.org">KDEWebdev</a>: Web development applications and tools.</li>
+
+<li><a href="http://www.kdevelop.org/">KDevelop</a>: C/C++ Integrated Development Environment.</li>
+<li><a href="http://extragear.kde.org/">KDE-Extragear</a>: Extragear is a
+collection of applications associated with KDE, not part of the
+official software compilation release for various reasons. These are however still part of
+the project and can be downloaded separately. This gives them higher
+visibility to Translators and Documentation Writers and permits a separate workflow, 
+which can be better suited to certain applications. </li>
+
+<li>KDE-Playground: Similar in scope to KDE-Extragear, this pseudo-package contains mostly 
+pre-release and unstable software not part of the main software release. It is a place for 
+applications to mature before being presented for public consumption, and should not be
+considered for regular users.</li>
+</ul>
+
+<p>And last but certainly not the least, there are literally
+thousands of excellent applications not part of KDE releases, yet are designed around KDE
+technologies. These applications are too numerous to mention individually on the main KDE 
+website, but you can find these using the 
+<a href="http://www.kde-apps.org">KDE-apps.org central database</a>.</p>
+
+		</div>
+	</div>
+ 	<div style="clear: both;"></div>

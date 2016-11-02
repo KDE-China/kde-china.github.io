@@ -182,7 +182,7 @@ opacity: 0;
 <div class="menubox_body">
 <ul>
 <li class="noindex">
-<a href="https://www.kde.org/community/whatiskde/softwarecompilation.php">软件集</a>
+<a href="./?q=community/whatiskde/softwarecompilation">软件集</a>
 </li> <li class="noindex">
 <a href="https://www.kde.org/community/whatiskde/management.php">项目管理</a>
 </li> <li class="noindex">
