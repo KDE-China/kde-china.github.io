@@ -184,7 +184,7 @@ opacity: 0;
 <li class="noindex">
 <a href="./?q=community/whatiskde/softwarecompilation">软件集</a>
 </li> <li class="noindex">
-<a href="https://www.kde.org/community/whatiskde/management.php">项目管理</a>
+<a href="./?q=community/whatiskde/management">项目管理</a>
 </li> <li class="noindex">
 <a href="https://www.kde.org/community/whatiskde/devmodel.php">开发模式</a>
 </li> <li class="noindex">
