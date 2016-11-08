@@ -186,7 +186,7 @@ opacity: 0;
 </li> <li class="noindex">
 <a href="./?q=community/whatiskde/management">项目管理</a>
 </li> <li class="noindex">
-<a href="https://www.kde.org/community/whatiskde/devmodel.php">开发模式</a>
+<a href="./?q=community/whatiskde/devmodel">开发模式</a>
 </li> <li class="noindex">
 <a href="https://www.kde.org/community/whatiskde/i18n.php">国际化</a>
 </li> <li class="noindex">

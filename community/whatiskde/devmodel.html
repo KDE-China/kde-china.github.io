@@ -1,0 +1,80 @@
+	<div class="content">
+	<script type="text/javascript" src="/media/javascripts/jquery-1.4.2.min.js"></script>
+   <script type="text/javascript" src="/media/javascripts/jquery.mailme.js"></script>
+	<script type="text/javascript" src="/media/javascripts/plasmaMenu.min.js"></script>	
+	<script type="text/javascript" src="/media/javascripts/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript">
+		(function($) {
+			var cache = [];
+			// Arguments are image paths relative to the current page.
+			$.preLoadImages = function() {
+			    var args_len = arguments.length;
+			    for (var i = args_len; i--;) {
+				var cacheImage = document.createElement('img');
+				cacheImage.src = arguments[i];
+				cache.push(cacheImage);
+			    }
+			 }
+		})(jQuery)
+		
+		$(document).ready(function() {
+			$('span.mailme').mailme();
+			$('.sub').hide();
+			$('.toggle').show();
+			$('.teaser_hide').css('display', 'block');
+					});
+	</script>    <div id="main">
+                       <div style="float: right; padding: 7px 10px; margin-left: 10px; border: 1px solid #CCC; border-radius: 12px;" >
+
+                    <div style='font-size: 14px; color: #909090; float: left; padding-top: 5px;'><a href='./?q=community/donations/index#money'>（为什么？）捐赠</a></div>
+                    <img src='https://www.kde.org/media/images/paypal.png' style='padding: 0px; border: none; margin: 0px; margin-left: 10px; float: right;' alt="paypal" />
+                    <form style='clear: both; margin: 0px; box-shadow: none; padding: 0px; padding-top: 10px; border: none;' action="https://www.paypal.com/en_US/cgi-bin/webscr" method="post" onsubmit="return amount.value >= 2 || window.confirm('Your donation is smaller than 2€. This means that most of your donation\nwill end up in processing fees. Do you want to continue?');">
+                        <input type="hidden" name="cmd" value="_donations" />
+                        <input type="hidden" name="lc" value="GB" />
+                        <input type="hidden" name="item_name" value="Development and communication of KDE software" />
+                        <input type="hidden" name="custom" value="//www.kde.org/community/whatiskde/devmodel.php/donation_box" />
+                        <input type="hidden" name="currency_code" value="EUR" />
+                        <input type="hidden" name="cbt" value="Return to www.kde.org" />
+                        <input type="hidden" name="return" value="https://www.kde.org/community/donations/thanks_paypal.php" />
+                        <input type="hidden" name="notify_url" value="https://www.kde.org/community/donations/notify.php" />
+                        <input type="hidden" name="business" value="kde-ev-paypal@kde.org" />
+                        <input type='text' name="amount" value="10.00" style='text-align: right; padding-right: 1em; border: 1px solid #CCC; width: 60px; height: 23px; ' /> €
+                        <button style='cursor: pointer; background-color: #0070BB; border: 1px solid #0060AB; color: #FFF; height: 27px;' type='submit'>捐赠</button>
+                    </form>
+                </div>
+        
+<a name="cp-content"></a>
+<h2>开发模式</h2>
+<div style='clear:both;'></div>
+    <div id="module">
+    </div>
+<p>
+KDE 团队成功地吸引了大量的贡献者。为了吸引大量的贡献者，贡献必须是有趣的：让贡献者愿意在 KDE 软件上花费宝贵的时间，而不求任何报酬。KDE团队知道：在任何时候都必须保持“玩耍和试验”。必须始终有正在实施的项目。这是从我们自己和其他项目中学到的。
+</p>
+
+<p>根据我们的经验，为一个项目呈现一个蓝图，无论它是多么的辉煌，然而如果让贡献者失去了创造力，没有机会实现自己的想法，则是不可取的。必须始终保持项目的运作模式。一个具体的实现，可以被审查、演示，虽然还不完美、甚至不完整，但持续在该实现上迭代地改进，即使这意味着随着时间的推移，设计可能需要被丢弃、甚至重写，先前的设计令人不满意。KDE 开发模式有一定的低效率。虽然牺牲了最大化的开发效率，但总体而言更令人信服，因为大量的贡献者使得一定数量的低效率变得可以接受。最好是让100名兴奋、积极的团队成员反复地改进项目，比让（5人根据蓝图，以最有效的方式工作）要好。5人的团体很快就会无聊，因为他们很少或没有机会表达自己的想法，这也是他们无法吸引更多贡献者的原因。我们工作的另一个好处是，允许所有团队成员发挥创造力，最终结果均优于中央化管理</p>
+
+<center><img src="https://www.kde.org/community/whatiskde/images/development.png" height="123" width="450"
+alt="开发周期" /></center>
+
+<p>KDE 团队，主要存在于互联网上，由专门的贡献者牺牲他们的自由时间来推进自由软件。KDE 缺少经典的层次结构 - 甚至与许多其他自由软件项目相比。这是团队为之感到自豪的。与公司或公司的限制不同，不可能根据排名将任务分配给贡献者。没有贡献者会承担一份工作，只是因为项目管理层告诉他这样做。在没有经典的层次结构和权力结构，开发必须有趣，有趣和富有挑战性，使得项目成功。项目中的贡献者的受到的尊重和声望完全取决于以前对项目的高质量贡献，而不是人为的地位或排名。我们认为，不需要正规的层次结构，而要充满创造力的泡泡池，最好的想法，享受功能的实现，不问其来源。</p>
+
+<h2>KDE 哲学和核心原则</h2>
+
+<ul>
+<li>立即完成！</li>
+
+<li>专注！</li>
+
+<li>使用已有的工具，而不是重新造轮子！</li>
+
+<li>当提出建议时，将“我们应该...”改为“我会..”; 宏伟的计划是没有用的，除非你愿意投入工作。</li>
+
+<li>反复改进。</li>
+
+<li>从合理的功能开始，然后随着时间的推移改善。</li>
+</ul>
+
+		</div>
+	</div>
+ 	<div style="clear: both;"></div>
