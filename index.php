@@ -188,7 +188,7 @@ opacity: 0;
 </li> <li class="noindex">
 <a href="./?q=community/whatiskde/devmodel">开发模式</a>
 </li> <li class="noindex">
-<a href="https://www.kde.org/community/whatiskde/i18n.php">国际化</a>
+<a href="./?q=community/whatiskde/i18n">国际化</a>
 </li> <li class="noindex">
 <a href="https://ev.kde.org">KDE 法律和财务实体</a>
 </li> <li class="noindex">
