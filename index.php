@@ -317,7 +317,7 @@ opacity: 0;
 </div>
 
     <div id="footer"><div id="footer_text">
-        由 <a href="mailto:master@kde-china.org">KDE 中国</a> 维护<br />
+        由 <a href="mailto:lesliezhai@kde-china.org">KDE 中国</a> 维护 虚拟主机由<a href="https://isoft-linux.org">普华开源社区</a>提供<br />
 KDE<sup>&#174;</sup> 和 <a href="https://www.kde.org/media/images/trademark_kde_gear_black_logo.png">K 桌面环境<sup>&#174;</sup> 商标</a> 是 <a href="http://ev.kde.org/" title="KDE 非盈利组织的主页">KDE e.V.</a> 注册商标 |
         <a href="http://www.kde.org/community/whatiskde/impressum.php">Legal</a>
     </div></div>
