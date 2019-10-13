@@ -1,1 +1,1 @@
-#kde-china.coding.me
+KDE-China.org website
